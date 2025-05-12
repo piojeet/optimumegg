@@ -122,15 +122,21 @@
 
                 <div class="stats-section">
                     <div class="stat-item">
-                        <div class="stat-number">1 +</div>
+                        <div class="stat-number">
+                            <span class="count" data-target="1">0</span> +
+                        </div>
                         <div class="stat-label">Years of Experience</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">100 M +</div>
+                        <div class="stat-number">
+                            <span class="count" data-target="100">0</span> M +
+                        </div>
                         <div class="stat-label">Contributed Visits</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">10 %</div>
+                        <div class="stat-number">
+                            <span class="count" data-target="10">0</span> %
+                        </div>
                         <div class="stat-label">Happy Clients</div>
                     </div>
                 </div>
@@ -296,17 +302,20 @@
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1.5,
+            slidesPerView: 1,
             spaceBetween: 15,
-            centeredSlides: true,
+            // centeredSlides: true,
             loop: true,
             freeMode: true,
 
             breakpoints: {
-                640: {
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                768: {
                     slidesPerView: 2,
                     spaceBetween: 30,
-                    centeredSlides: true,
                 },
             }
         });
@@ -365,7 +374,40 @@
         });
     </script>
 
+    <script>
+        const counters = document.querySelectorAll('.count');
 
+        const animateCount = (el) => {
+            const target = +el.dataset.target;
+            let count = 0;
+            const speed = 200; // adjust for speed
+
+            const update = () => {
+                const increment = target / speed;
+                if (count < target) {
+                    count += increment;
+                    el.textContent = Math.floor(count);
+                    requestAnimationFrame(update);
+                } else {
+                    el.textContent = target;
+                }
+            };
+
+            update();
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCount(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => observer.observe(counter));
+
+    </script>
 
 
 </body>
