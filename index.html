@@ -29,8 +29,8 @@
                         <a data-target="about"><img src="assets/Vector (1).png" alt="Icon 2"></a>
                     </li>
                     <li class="icon-item">
-                        <a data-target="gallery"><img src="assets/6dedaebf1e705715edebaa543206cdb7789100ba.png"
-                                alt="Icon 3"></a>
+                        <a href="#" onclick="alert('Gallery page coming soon')"><img
+                                src="assets/6dedaebf1e705715edebaa543206cdb7789100ba.png" alt="Icon 3"></a>
                     </li>
                     <li class="icon-item">
                         <a data-target="faq"><img src="assets/38c8d25ce8ba2a83c88dc742a9f760f0715b47ab.png"
@@ -49,7 +49,10 @@
                         <div class="hero-logo">
                             <img src="assets/17bb4801b5dd2a04d37924cf62fa2e6a827c155d.png" alt="img">
                         </div>
-                        <h1 class="hero-heading">HELLO</h1>
+                        <h1 class="hero-heading">
+                            <div class="text active" id="text1">HELLO</div>
+                            <div class="text" id="text2"><span>OLLEH</span></div>
+                        </h1>
                     </div>
                     <p class="hero-subtitle">
                         I am <b>Optimum<span class="highlight">Egg</span>, UI/UX Designer</b>
@@ -167,8 +170,8 @@
                     </div>
                 </div>
 
-                <a href="#" class="click__more"><img src="assets/6dedaebf1e705715edebaa543206cdb7789100ba.png"
-                        alt="icon"> Click For More!</a>
+                <a href="#" class="click__more" onclick="alert('Gallery page coming soon')"><img
+                        src="assets/6dedaebf1e705715edebaa543206cdb7789100ba.png" alt="icon"> Click For More!</a>
             </div>
         </section>
 
@@ -177,7 +180,7 @@
             <img id="modalImg" class="modal-content" />
         </div>
 
-        <section class="faq-section">
+        <section class="faq-section" id="faq">
             <div class="faq-container">
                 <div class="faq-header">
                     <div class="faq-title">
@@ -189,7 +192,7 @@
                     </p>
                 </div>
 
-                <div class="faq-list" id="faq">
+                <div class="faq-list">
                     <div class="faq-item">
                         <div class="faq-question">
                             What styles of UI are you specializing in Optimum?
@@ -304,9 +307,12 @@
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             spaceBetween: 15,
-            // centeredSlides: true,
             loop: true,
-            freeMode: true,
+            // freeMode: true,
+            autoplay: {
+                delay: 3000, // 3 seconds delay
+                disableOnInteraction: false, // autoplay doesn't stop after user interaction
+            },
 
             breakpoints: {
                 1024: {
@@ -320,6 +326,7 @@
             }
         });
     </script>
+
 
 
     <script>
@@ -407,6 +414,30 @@
 
         counters.forEach(counter => observer.observe(counter));
 
+    </script>
+
+    <script>
+        const text1 = document.getElementById("text1");
+        const text2 = document.getElementById("text2");
+
+        let showFirst = true;
+
+        setInterval(() => {
+            if (showFirst) {
+                text1.classList.remove("active");
+                text1.classList.add("out");
+
+                text2.classList.remove("out");
+                text2.classList.add("active");
+            } else {
+                text2.classList.remove("active");
+                text2.classList.add("out");
+
+                text1.classList.remove("out");
+                text1.classList.add("active");
+            }
+            showFirst = !showFirst;
+        }, 4000); // 2s visible + 0.6s exit + 1.4s gap = smooth loop
     </script>
 
 
