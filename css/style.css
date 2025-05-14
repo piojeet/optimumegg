@@ -716,7 +716,7 @@ main {
         max-width: 350px;
         margin: 0 auto;
         display: block;
-        transform: translateY(-80%);
+        transform: translateY(-50%);
         bottom: 50%;
     }
 
