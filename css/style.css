@@ -108,6 +108,8 @@ body {
     align-items: center;
     justify-content: space-between;
     padding-top: 120px;
+    min-height: 100vh;
+    height: auto;
 }
 
 .hero-heading {
@@ -536,8 +538,8 @@ main {
             #262B32 65%,
             #181C28 83%,
             #262B32 100%);
-            min-height: 100vh;
-            height: auto;
+    min-height: 100vh;
+    height: auto;
 }
 
 .grid-gallery {
@@ -553,6 +555,24 @@ main {
     padding-right: 80px;
 }
 
+@media only screen and (max-width: 1440px) {
+    .grid-gallery {
+        max-width: 1440px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar-logo img {
+        height: 40px;
+    }
+
+    .icon-item a {
+        width: 70px;
+        height: 70px;
+        padding: 18px 18px;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     .hero-container {
         padding: 50px 40px;
@@ -561,6 +581,11 @@ main {
 
     .hero-left {
         max-width: 508px;
+    }
+
+    .grid-gallery {
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     .hero-heading {
@@ -683,6 +708,7 @@ main {
     .hero-container {
         display: flex;
         flex-direction: column-reverse;
+        justify-content: center;
     }
 
     .hero-right img {
@@ -690,6 +716,8 @@ main {
         max-width: 350px;
         margin: 0 auto;
         display: block;
+        transform: translateY(-80%);
+        bottom: 50%;
     }
 
     .footer-content {
@@ -721,7 +749,7 @@ main {
     }
 
     .hero-container {
-        padding-top: 150px;
+        padding-top: 190px;
     }
 
     .hero-left {
@@ -735,6 +763,10 @@ main {
 
     .navbar-logo {
         display: none;
+    }
+
+      .grid-gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -814,7 +846,7 @@ main {
 
     .hero-container {
         padding: 50px 25px;
-        padding-top: 110px;
+        padding-top: 230px;
     }
 
     .navbar {
@@ -841,6 +873,12 @@ main {
 
     .faq-description {
         font-size: 18px;
+    }
+
+    .grid-gallery {
+        padding-left: 25px;
+        padding-right: 25px;
+        grid-template-columns: 1fr;
     }
 
 }
