@@ -107,6 +107,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 120px;
 }
 
 .hero-heading {
@@ -527,6 +528,31 @@ main {
     overflow: hidden;
 }
 
+.gallery-main {
+    background: linear-gradient(135deg,
+            #181C28 0%,
+            #262B32 23%,
+            #181C28 41%,
+            #262B32 65%,
+            #181C28 83%,
+            #262B32 100%);
+            min-height: 100vh;
+            height: auto;
+}
+
+.grid-gallery {
+    max-width: 90%;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 150px;
+    gap: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
 @media only screen and (max-width: 1024px) {
     .hero-container {
         padding: 50px 40px;
@@ -813,7 +839,7 @@ main {
         display: none;
     }
 
-        .faq-description {
+    .faq-description {
         font-size: 18px;
     }
 

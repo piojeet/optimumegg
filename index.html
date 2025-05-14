@@ -29,7 +29,7 @@
                         <a data-target="about"><img src="assets/Vector (1).png" alt="Icon 2"></a>
                     </li>
                     <li class="icon-item">
-                        <a href="#" onclick="alert('Gallery page coming soon')"><img
+                        <a href="gallery.html"><img
                                 src="assets/6dedaebf1e705715edebaa543206cdb7789100ba.png" alt="Icon 3"></a>
                     </li>
                     <li class="icon-item">
@@ -170,14 +170,14 @@
                     </div>
                 </div>
 
-                <a href="#" class="click__more" onclick="alert('Gallery page coming soon')"><img
+                <a href="gallery.html" class="click__more"><img
                         src="assets/6dedaebf1e705715edebaa543206cdb7789100ba.png" alt="icon"> Click For More!</a>
             </div>
         </section>
 
-        <!-- Modal container -->
+         <!-- Modal container -->
         <div id="imageModal" class="modal">
-            <img id="modalImg" class="modal-content" />
+            <img id="modalImg" class="modal-content modal-img" />
         </div>
 
         <section class="faq-section" id="faq">
@@ -329,29 +329,7 @@
 
 
 
-    <script>
-        // Get modal elements
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImg");
-
-        // Get all gallery images inside the Swiper
-        const galleryImages = document.querySelectorAll(".gallery-image");
-
-        // Add click event for each image in Swiper
-        galleryImages.forEach(image => {
-            image.addEventListener("click", function () {
-                modal.style.display = "flex";
-                modalImg.src = image.src;
-                document.body.style.overflow = "hidden"; // 🔒 Disable scroll
-            });
-        });
-
-        // When the user clicks anywhere on the modal, close it
-        modal.addEventListener("click", function () {
-            modal.style.display = "none";
-            document.body.style.overflow = ""; // 🔓 Enable scroll again
-        });
-    </script>
+    <script src="js/script.js"></script>
 
     <script>
         const faqItems = document.querySelectorAll('.faq-item');
