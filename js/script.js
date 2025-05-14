@@ -54,9 +54,9 @@ const counters = document.querySelectorAll('.count');
         const faqItems = document.querySelectorAll('.faq-item');
 
         // Open the first item (index 0)
-        if (faqItems.length > 0) {
-            faqItems[0].classList.add('active');
-        }
+        // if (faqItems.length > 0) {
+        //     faqItems[0].classList.add('active');
+        // }
 
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
