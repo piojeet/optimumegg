@@ -331,38 +331,6 @@
 
     <script src="js/script.js"></script>
 
-    <script>
-        const faqItems = document.querySelectorAll('.faq-item');
-
-        // Open the first item (index 0)
-        if (faqItems.length > 0) {
-            faqItems[0].classList.add('active');
-        }
-
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-
-            question.addEventListener('click', () => {
-                item.classList.toggle('active'); // Toggle clicked item
-            });
-        });
-
-
-        document.querySelectorAll('.icon-item a[data-target]').forEach(button => {
-            button.addEventListener('click', () => {
-                const targetId = button.getAttribute('data-target');
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
-
-    <script>
-        
-
-    </script>
 
     <script>
         const text1 = document.getElementById("text1");
