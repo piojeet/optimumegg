@@ -716,8 +716,7 @@ main {
         max-width: 350px;
         margin: 0 auto;
         display: block;
-        transform: translateY(-50%);
-        bottom: 50%;
+
     }
 
     .footer-content {
@@ -740,7 +739,8 @@ main {
 
     .hero-right {
         position: absolute;
-        bottom: 0;
+        transform: translateY(-50%);
+        top: 50%;
         z-index: 4;
     }
 
@@ -765,7 +765,7 @@ main {
         display: none;
     }
 
-      .grid-gallery {
+    .grid-gallery {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -879,6 +879,7 @@ main {
         padding-left: 25px;
         padding-right: 25px;
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
 }
